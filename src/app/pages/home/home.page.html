@@ -1,0 +1,53 @@
+<ion-content>
+  <div class="content">
+    <div class="content-header ion-padding">
+      <div class="icon" fx-row fx-right>
+        <!-- <img mr src="assets/icon/play-circle.svg" alt="" (click)="presentPopover($event)"> -->
+        <img (click)="openContactFavorite()" mr src="assets/icon/save.svg" alt="">
+        <img (click)="openHistory()" src="assets/icon/history.svg" alt="">
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="content-body ion-padding" fx-row fx-center>
+        <img src="assets/logo-no-background.png" alt="">
+      </div>
+
+      <div class="content-footer ion-padding">
+        <div *ngIf="isFavorite" class="cf-input">
+          <ion-label class="label-name">Nama</ion-label>
+          <ion-input [clearInput]="true" [(ngModel)]="chatService.name" placeholder="Masukan nama"></ion-input>
+        </div>
+
+        <div class="cf-input">
+          <ion-label class="label-name">Nomor Whatsapp</ion-label>
+          <ion-input [clearInput]="true" type="tel" [(ngModel)]="chatService.phone"
+            placeholder="Masukan nomor whatsapp"></ion-input>
+        </div>
+
+        <div class="cf-input">
+          <ion-label>Pesan</ion-label>
+          <ion-textarea placeholder="Masukan pesan (opsional)" row="8" [(ngModel)]="chatService.message"></ion-textarea>
+        </div>
+
+        <ion-item class="ion-no-padding" mt_8px fxLayout="row" lines="none">
+          <ion-label>Simpan Sebagai Favorit</ion-label>
+          <ion-toggle [(ngModel)]="isFavorite"></ion-toggle>
+        </ion-item>
+
+        <div>
+          <ion-button class="ion-margin-top" expand="block" color="primary" (click)="!loadingWatch ? openChat() : ''">
+            <span *ngIf="!loadingWatch">Buka WhatsApp </span>
+            <ion-spinner *ngIf="loadingWatch" name="dots"></ion-spinner>
+          </ion-button>
+        </div>
+
+        <div class="ion-text-center copyright ion-margin-top" fxLayout="column">
+          <small>Versi {{version$ | async}}</small>&nbsp;
+          <small>Powered by Tiludep 2023</small>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</ion-content>

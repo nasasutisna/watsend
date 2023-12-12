@@ -16,7 +16,7 @@
 @import "@ionic/angular/css/normalize.css";
 @import "@ionic/angular/css/structure.css";
 @import "@ionic/angular/css/typography.css";
-@import '@ionic/angular/css/display.css';
+@import "@ionic/angular/css/display.css";
 
 /* Optional CSS utils that can be commented out */
 @import "@ionic/angular/css/padding.css";
@@ -24,3 +24,41 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+[fx-right] {
+  justify-content: right;
+}
+
+[fx-row] {
+  display: flex;
+  flex-direction: row;
+}
+
+[fx-column] {
+  display: flex;
+  flex-direction: column;
+}
+
+[fx-center] {
+  justify-content: center;
+}
+
+[fx-space-between] {
+  justify-content: space-between;
+}
+
+[fx-left] {
+  justify-content: left;
+}
+
+[fx-gap-16] {
+  gap: 16px;
+}
+
+.alert-wrapper { 
+  .alert-button:first-child {
+    color: white;
+    background-color: var(--ion-color-danger);
+    border-radius: 6px;
+  }
+}

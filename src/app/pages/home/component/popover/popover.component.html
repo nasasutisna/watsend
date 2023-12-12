@@ -1,0 +1,7 @@
+<div *ngFor="let item of menuList">
+  <ion-item class="ion-no-padding" (click)="dismiss(item)">
+    <div class="ion-padding-start">
+      {{item?.label}}
+    </div>
+  </ion-item>
+</div>

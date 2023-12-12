@@ -1,0 +1,37 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Riwayat Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="warning-card" *ngIf="historyList?.length">
+    Daftar Riwayat akan hilang secara otomatis ketika kamu clear storage atau uninstall aplikasi
+  </div>
+
+  <div class="list">
+    <div *ngIf="historyList?.length">
+      <div class="list-chat" fx-row fx-space-between *ngFor="let item of historyList">
+        <div class="left" fx-column>
+          <ion-label>{{item.name || item.phone}}</ion-label>
+          <ion-label class="small" color="medium">{{item?.time | date: 'HH:mm d MMM YYYY'}}</ion-label>
+        </div>
+        <div class="right" fx-row fx-right fx-gap-16>
+          <img (click)="openChat(item)" src="assets/icon/chat.svg" alt="">
+          <img (click)="delete(item.phone)" src="assets/icon/trash.svg" alt="">
+          <!-- <ion-icon name="chatbubble-ellipses" (click)="openChat(item)" color="success"></ion-icon>
+          <ion-icon (click)="deleteContact(item.phone)" slot="end" name="trash-outline"></ion-icon> -->
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="!historyList?.length" class="empty-state" fx-column
+      fx-center>
+      <img src="assets/icon/empty-state.png" alt="">
+      <h1>Wahh, Belum ada list kontak favorit nihh!</h1>
+      <ion-label color="medium">yuk mulai chat tanpa ribet save nomer!</ion-label>
+    </div>
+  </div>
+
+</ion-content>

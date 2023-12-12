@@ -1,0 +1,114 @@
+.content {
+  height: 100%;
+  .hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .disable {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  .open {
+    opacity: 1 !important;
+    transition: opacity 500ms;
+  }
+  .content-header {
+    .icon {
+      position: absolute;
+      right: 16px;
+      
+      [mr] {
+        margin-right: 16px;
+      }
+      .ilusi {
+        position: absolute;
+        width: 53px;
+        height: 15px;
+      }
+      .tooltip {
+        position: absolute;
+        top: 35px;
+        right: 37px;
+        font-size: 12px;
+        background: black;
+        color: white;
+        padding: 4px 10px;
+        border-radius: 4px;
+        opacity: 0;
+      }
+      .tooltip::after {
+        content: "";
+        position: absolute;
+        bottom: 98%;
+        right: 20%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+        transform: rotate(180deg);
+      }
+    }
+  }
+  .content-body {
+    margin-bottom: 125px;
+
+    img {
+      width: 180px;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .content-footer {
+    background-color: white;
+    padding-bottom: 20px;
+    box-shadow: rgb(229 229 229) 0px -6px 10px;
+    border-radius: 20px 20px 0 0;
+    [mt_8px] {
+      margin-top: 8px;
+    }
+    ion-toggle {
+      --track-background-checked: #7dbf87;
+      --background-checked: rgba(46, 124, 64, 0.6);
+    }
+
+    ion-textarea {
+      border: 1px solid #d6d6d6;
+      border-radius: 6px;
+      padding-left: 12px !important;
+      min-height: 45px;
+      padding-right: 12px !important;
+      --highlight-color-focused: none;
+      --highlight-color-valid: none;
+    }
+
+    ion-input {
+      border: 1px solid #d6d6d6;
+      border-radius: 6px;
+      padding-left: 12px !important;
+      min-height: 45px;
+      padding-right: 12px !important;
+      --highlight-color-focused: none !important;
+      --highlight-color-valid: none !important;
+    }
+
+    ion-label {
+      margin: 10px 0 !important;
+      display: block;
+    }
+    ion-item {
+      --padding-start: 0px;
+      --inner-padding-end: 0px !important;
+    }
+  }
+}
+
+.copyright {
+  font-size: 14px;
+  color: silver;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}

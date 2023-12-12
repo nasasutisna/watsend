@@ -1,11 +1,18 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'io.ionic.starter',
-  appName: 'waku',
+  appId: 'com.watsend.app',
+  appName: 'Watsend',
   webDir: 'www',
   server: {
     androidScheme: 'https'
+  },
+  plugins: {
+    SplashScreen: {
+      launchAutoHide: false,
+      splashFullScreen: false,
+      backgroundColor: "#398378"
+    }
   }
 };
 

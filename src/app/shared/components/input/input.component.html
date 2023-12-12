@@ -1,0 +1,21 @@
+<label medium>{{formLabel}}</label><br>
+<div class="box-input" fxLayout="row" fxLayoutAlign=" center" mt-8>
+  <ion-input [type]="type" [placeholder]="placeholder" (keypress)="onlyNumber ? checkOnlyNumber($event) : ''"
+    (ionInput)="doInput($event)" (ionBlur)="touched()"></ion-input>
+</div>
+
+<div class="message-error" *ngIf="formField?.hasError('required') && formField?.dirty" right mt-10>
+  <label size-12 danger>*{{formControlName}} is required</label>
+</div>
+
+<div class="message-error" *ngIf="formField?.hasError('minlength') && formField?.dirty" right mt-10>
+  <label size-12 danger>*{{formControlName}} min length {{getMinLength}}</label>
+</div>
+
+<div class="message-error" *ngIf="formField?.hasError('maxlength') && formField?.dirty" right mt-10>
+  <label size-12 danger>*{{formControlName}} max length {{getMaxLength}}</label>
+</div>
+
+<div class="message-error" *ngIf="formField?.hasError('email') && formField?.dirty" right mt-10>
+  <label size-12 danger>*{{formControlName}} is not valid</label>
+</div>

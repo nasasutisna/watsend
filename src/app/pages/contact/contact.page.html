@@ -1,0 +1,42 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <ion-back-button slot="start"></ion-back-button>
+    <ion-title>Kontak Favorit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="warning-card" *ngIf="favoriteList?.length">
+    Daftar kontak akan hilang secara otomatis ketika kamu clear storage atau uninstall aplikasi
+  </div>
+
+  <div class="searchbar" *ngIf="favoriteList?.length">
+    <ion-searchbar mode="ios" (ngModelChange)="search($event)" [(ngModel)]="keyword" debounce="1000"
+      placeholder="Cari nama..."></ion-searchbar>
+  </div>
+
+  <div class="list">
+    <div *ngIf="favoriteList?.length">
+      <ng-container *ngFor="let item of favoriteList">
+        <div fx-row fx-space-between  class="list-chat" *ngIf="item?.show">
+
+          <div class="left" fx-column>
+            <ion-label>{{item.name}}</ion-label>
+            <ion-label class="small" color="medium">{{item.phone}}</ion-label>
+          </div>
+          <div class="right" fx-row fx-gap-16>
+            <img (click)="openChat(item)" src="assets/icon/chat.svg" alt="">
+            <img (click)="deleteContact(item.phone)" src="assets/icon/trash.svg" alt="">
+          </div>
+
+        </div>
+      </ng-container>
+    </div>
+
+    <div *ngIf="!favoriteList?.length" class="empty-state" fx-column fx-center>
+      <img src="assets/icon/empty-state.png" alt="">
+      <h1>Wahh, Belum ada list kontak favorit nihh!</h1>
+      <ion-label color="medium">yuk mulai chat tanpa ribet save nomer!</ion-label>
+    </div>
+  </div>
+</ion-content>

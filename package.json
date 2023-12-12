@@ -1,12 +1,13 @@
 {
-  "name": "waku",
+  "name": "watsend",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "tiludep",
+  "homepage": "https://nasasutisna.github.io",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:prod": "ng build --configuration production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint"
@@ -14,6 +15,7 @@
   "private": true,
   "dependencies": {
     "@angular/animations": "^16.0.0",
+    "@angular/cdk": "^16.1.1",
     "@angular/common": "^16.0.0",
     "@angular/compiler": "^16.0.0",
     "@angular/core": "^16.0.0",
@@ -21,12 +23,23 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@awesome-cordova-plugins/app-version": "^6.3.0",
+    "@awesome-cordova-plugins/core": "^6.3.0",
+    "@awesome-cordova-plugins/in-app-browser": "^6.3.0",
+    "@capacitor-community/admob": "^5.0.0",
+    "@capacitor-community/firebase-analytics": "^5.0.1",
+    "@capacitor/android": "^5.0.5",
     "@capacitor/app": "5.0.3",
     "@capacitor/core": "5.0.5",
+    "@capacitor/device": "^5.0.4",
     "@capacitor/haptics": "5.0.4",
     "@capacitor/keyboard": "5.0.4",
+    "@capacitor/preferences": "^5.0.6",
+    "@capacitor/push-notifications": "^5.1.0",
+    "@capacitor/splash-screen": "^5.0.4",
     "@capacitor/status-bar": "5.0.4",
     "@ionic/angular": "^7.0.0",
+    "cordova-plugin-app-version": "^0.1.14",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -43,6 +56,7 @@
     "@angular/compiler": "^16.0.0",
     "@angular/compiler-cli": "^16.0.0",
     "@angular/language-service": "^16.0.0",
+    "@capacitor/assets": "^2.0.4",
     "@capacitor/cli": "5.0.5",
     "@ionic/angular-toolkit": "^9.0.0",
     "@types/jasmine": "~4.3.0",
@@ -64,5 +78,5 @@
     "ts-node": "^8.3.0",
     "typescript": "~5.0.2"
   },
-  "description": "An Ionic project"
+  "description": "Watsend Project"
 }
